@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-def print_sorted_dictionary(a_dictionary)
-sorted_keys = sorted(a_dictionary.keys())
-for i,k in enumerate(sorted_keys)
-print 
-(f"{}:{key}")
+
+
+def print_sorted_dictionary(a_dictionary):
+    """
+    prints a dictionary by ordered keys. keys assumed to be strings
+    """
+    [print("{}: {}".format(key, a_dictionary[key]))
+        for key in sorted(a_dictionary)]
+
