@@ -1,9 +1,12 @@
-# Puppet to set changes in a server
-file_line { 'disable password login':
-  path => '/etc/ssh/ssh_config',
-  line => 'PasswordAuthentication no',
+file_line { 'Turn off passwd auth':
+  path  => '/etc/ssh/ssh_config',
+  line  => 'PasswordAuthentication no',
+  match => '^#PasswordAuthentication yes',
 }
-file_line { 'add path to find the keys':
-  path => '/etc/ssh/ssh_config',
-  line => 'IdentityFile ~/.ssh/holberton',
+
+file_line { 'Declare identity file':
+  path  => '/etc/ssh/ssh_config',
+  line  => 'IdentityFile ~/.ssh/school',
+  match => '^#IdentityFile.*',
 }
+
